@@ -1,0 +1,23 @@
+---
+title: "IMDB Project"
+author: "xiaofan xia"
+date: "11/20/2019"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+df1 <- read.csv("primary_cast_new.csv")
+head(df1)
+```
+
+## EDA
+
+```{r}
+
+```
+
+
