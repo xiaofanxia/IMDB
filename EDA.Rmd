@@ -9,6 +9,7 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
+library(ggplot2)
 df1 <- read.csv("primary_cast_new.csv")
 ```
 # Overview
@@ -34,8 +35,13 @@ This dataset contains 6 different tsv files and the dataset is refreshed daily. 
 6. Generate a model to predict the ratings of the product if it is possible.
 
 # EDA
-```{r}
-
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+mean(df1$averageRating)
+mean(df1$numVotes)
+df1$runtimeMinutes <- as.numeric(df1$runtimeMinutes)
+mean(df1$runtimeMinutes)
+ggplot(data = df1)+geom_smooth(aes(df1$averageRating,df1$numVotes))+xlab("Average Rating")+ylab("Number of Votes")
+#ggplot(data=df1)+geom_point(aes(df1$startYear,df1$averageRating),color=df1$numVotes)+xlab("Release Year")+ylab("Average Rating")
 ```
 
 
